@@ -1,7 +1,7 @@
-package component;
+package simulation.digital_circuits.component;
 
 import com.google.common.collect.Lists;
-import component.enums.Signal;
+import simulation.digital_circuits.component.enums.Signal;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package agenda;
+package simulation.digital_circuits.agenda;
 
-import component.CircuitsAction;
+import simulation.digital_circuits.component.CircuitsAction;
 
-import component.elements.AndGate;
+import simulation.digital_circuits.component.elements.AndGate;
 import org.junit.Before;
 import org.junit.Test;
 

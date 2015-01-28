@@ -1,8 +1,8 @@
-package agenda;
+package simulation.digital_circuits.agenda;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import component.CircuitsAction;
+import simulation.digital_circuits.component.CircuitsAction;
 
 import java.util.List;
 import java.util.Map;

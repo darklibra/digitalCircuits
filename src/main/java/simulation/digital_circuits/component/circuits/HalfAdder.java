@@ -1,9 +1,9 @@
-package component.circuits;
+package simulation.digital_circuits.component.circuits;
 
-import component.Wire;
-import component.elements.AndGate;
-import component.elements.Inverter;
-import component.elements.OrGate;
+import simulation.digital_circuits.component.Wire;
+import simulation.digital_circuits.component.elements.AndGate;
+import simulation.digital_circuits.component.elements.Inverter;
+import simulation.digital_circuits.component.elements.OrGate;
 
 public class HalfAdder {
     private final OrGate orGate;

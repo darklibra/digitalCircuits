@@ -1,6 +1,6 @@
-package component;
+package simulation.digital_circuits.component;
 
-import component.enums.Signal;
+import simulation.digital_circuits.component.enums.Signal;
 import org.assertj.core.util.Lists;
 import org.junit.Before;
 import org.junit.Test;

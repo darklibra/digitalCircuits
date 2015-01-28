@@ -1,6 +1,6 @@
-package agenda;
+package simulation.digital_circuits.agenda;
 
-import component.CircuitsAction;
+import simulation.digital_circuits.component.CircuitsAction;
 
 public class AgendaPropagate {
     private Agenda agenda;

@@ -1,7 +1,7 @@
-package component.elements;
+package simulation.digital_circuits.component.elements;
 
-import component.enums.Signal;
-import component.Wire;
+import simulation.digital_circuits.component.enums.Signal;
+import simulation.digital_circuits.component.Wire;
 
 public class OrGate {
     private final Wire inputA, inputB;

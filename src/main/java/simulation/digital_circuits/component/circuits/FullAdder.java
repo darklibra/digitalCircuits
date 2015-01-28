@@ -1,7 +1,7 @@
-package component.circuits;
+package simulation.digital_circuits.component.circuits;
 
-import component.Wire;
-import component.elements.OrGate;
+import simulation.digital_circuits.component.Wire;
+import simulation.digital_circuits.component.elements.OrGate;
 
 public class FullAdder {
     public FullAdder(Wire inputA, Wire inputB, Wire inputC, Wire sum, Wire outputC) {

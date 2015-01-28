@@ -1,4 +1,4 @@
-package component.enums;
+package simulation.digital_circuits.component.enums;
 
 import java.util.function.Supplier;
 

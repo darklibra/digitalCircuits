@@ -1,6 +1,6 @@
-package component.circuits;
+package simulation.digital_circuits.component.circuits;
 
-import component.Wire;
+import simulation.digital_circuits.component.Wire;
 import org.junit.Before;
 import org.junit.Test;
 

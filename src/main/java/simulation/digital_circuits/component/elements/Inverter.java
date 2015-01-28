@@ -1,7 +1,7 @@
-package component.elements;
+package simulation.digital_circuits.component.elements;
 
-import component.Wire;
-import component.enums.Signal;
+import simulation.digital_circuits.component.Wire;
+import simulation.digital_circuits.component.enums.Signal;
 
 public class Inverter {
     private final Wire input;
