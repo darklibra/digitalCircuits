@@ -1,5 +1,6 @@
-package component.impl;
+package component.circuits;
 
+import component.enums.Signal;
 import component.Wire;
 
 public class OrGate {
@@ -19,13 +20,7 @@ public class OrGate {
         target.addAction( () -> output.setSignal(logicalOr()) );
     }
 
-    private byte logicalOr() {
-        if (!validateInputs()) throw new IllegalArgumentException("Invalid signal");
-        else if (inputA.getSignal() == Wire.ONE || inputB.getSignal() == Wire.ONE) return Wire.ONE;
-        else return Wire.ZERO;
-    }
-
-    private boolean validateInputs() {
-        return Wire.validSignal(inputA) && Wire.validSignal(inputB);
+    private Signal logicalOr() {
+        return Signal.ifOneThenZero(() -> inputA.getSignal() == Signal.ONE || inputB.getSignal() == Signal.ONE);
     }
 }

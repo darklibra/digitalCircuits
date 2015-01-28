@@ -1,5 +1,6 @@
-package component.impl;
+package component.circuits;
 
+import component.enums.Signal;
 import component.Wire;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,10 +23,10 @@ public class InverterTest {
 
     @Test
     public void invert_test() {
-        input.setSignal(Wire.ZERO);
-        assertThat(output.getSignal()).isEqualTo(Wire.ONE);
+        input.setSignal(Signal.ZERO);
+        assertThat(output.getSignal()).isEqualTo(Signal.ONE);
 
-        input.setSignal(Wire.ONE);
-        assertThat(output.getSignal()).isEqualTo(Wire.ZERO);
+        input.setSignal(Signal.ONE);
+        assertThat(output.getSignal()).isEqualTo(Signal.ZERO);
     }
 }

@@ -1,9 +1,9 @@
 package circuits;
 
 import component.Wire;
-import component.impl.AndGate;
-import component.impl.Inverter;
-import component.impl.OrGate;
+import component.circuits.AndGate;
+import component.circuits.Inverter;
+import component.circuits.OrGate;
 
 public class HalfAdder {
     private final OrGate orGate;

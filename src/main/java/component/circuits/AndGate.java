@@ -1,5 +1,6 @@
-package component.impl;
+package component.circuits;
 
+import component.enums.Signal;
 import component.Wire;
 
 public class AndGate {
@@ -19,13 +20,7 @@ public class AndGate {
         target.addAction( () -> output.setSignal(logicalAnd()) );
     }
 
-    private byte logicalAnd() {
-        if (!validateInputs()) throw new IllegalArgumentException("Invalid signal");
-        else if (inputA.getSignal() == Wire.ONE && inputB.getSignal() == Wire.ONE) return Wire.ONE;
-        else return 0;
-    }
-
-    private boolean validateInputs() {
-        return Wire.validSignal(inputA) && Wire.validSignal(inputB);
+    private Signal logicalAnd() {
+        return Signal.ifOneThenZero(() -> inputA.getSignal() == Signal.ONE && inputB.getSignal() == Signal.ONE);
     }
 }

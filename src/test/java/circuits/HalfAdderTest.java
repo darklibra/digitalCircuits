@@ -1,5 +1,6 @@
 package circuits;
 
+import component.enums.Signal;
 import component.Wire;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,28 +25,28 @@ public class HalfAdderTest {
 
     @Test
     public void test1() {
-        a.setSignal(Wire.ONE);
-        b.setSignal(Wire.ZERO);
+        a.setSignal(Signal.ONE);
+        b.setSignal(Signal.ZERO);
 
-        assertThat(sum.getSignal()).isEqualTo(Wire.ONE);
-        assertThat(c.getSignal()).isEqualTo(Wire.ZERO);
+        assertThat(sum.getSignal()).isEqualTo(Signal.ONE);
+        assertThat(c.getSignal()).isEqualTo(Signal.ZERO);
     }
 
     @Test
     public void test2() {
-        a.setSignal(Wire.ZERO);
-        b.setSignal(Wire.ONE);
+        a.setSignal(Signal.ZERO);
+        b.setSignal(Signal.ONE);
 
-        assertThat(sum.getSignal()).isEqualTo(Wire.ONE);
-        assertThat(c.getSignal()).isEqualTo(Wire.ZERO);
+        assertThat(sum.getSignal()).isEqualTo(Signal.ONE);
+        assertThat(c.getSignal()).isEqualTo(Signal.ZERO);
     }
 
     @Test
     public void test3() {
-        a.setSignal(Wire.ONE);
-        b.setSignal(Wire.ONE);
+        a.setSignal(Signal.ONE);
+        b.setSignal(Signal.ONE);
 
-        assertThat(sum.getSignal()).isEqualTo(Wire.ZERO);
-        assertThat(c.getSignal()).isEqualTo(Wire.ONE);
+        assertThat(sum.getSignal()).isEqualTo(Signal.ZERO);
+        assertThat(c.getSignal()).isEqualTo(Signal.ONE);
     }
 }
