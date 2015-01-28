@@ -1,7 +1,7 @@
-package circuits;
+package component.circuits;
 
 import component.Wire;
-import component.circuits.OrGate;
+import component.elements.OrGate;
 
 public class FullAdder {
     public FullAdder(Wire inputA, Wire inputB, Wire inputC, Wire sum, Wire outputC) {

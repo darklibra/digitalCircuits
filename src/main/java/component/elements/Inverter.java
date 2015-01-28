@@ -1,7 +1,7 @@
-package component.circuits;
+package component.elements;
 
-import component.enums.Signal;
 import component.Wire;
+import component.enums.Signal;
 
 public class Inverter {
     private final Wire input;
@@ -14,11 +14,11 @@ public class Inverter {
         applyInverterAction(input);
     }
 
-    private void applyInverterAction(Wire target) {
+    protected void applyInverterAction(Wire target) {
         target.addAction( () -> output.setSignal(logicalNot()) );
     }
 
-    private Signal logicalNot() {
+    protected Signal logicalNot() {
         if (input.getSignal() == Signal.ZERO) return Signal.ONE;
         else if (input.getSignal() == Signal.ONE) return Signal.ZERO;
         else throw new IllegalArgumentException("Invalid signal");

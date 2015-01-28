@@ -1,7 +1,7 @@
-package component.circuits;
+package component.elements;
 
-import component.enums.Signal;
 import component.Wire;
+import component.enums.Signal;
 import org.junit.Before;
 import org.junit.Test;
 

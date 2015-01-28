@@ -1,4 +1,4 @@
-package component.circuits;
+package component.elements;
 
 import component.enums.Signal;
 import component.Wire;
@@ -16,11 +16,11 @@ public class OrGate {
         applyAndGateAction(inputB);
     }
 
-    private void applyAndGateAction(Wire target) {
-        target.addAction( () -> output.setSignal(logicalOr()) );
+    protected void applyAndGateAction(Wire target) {
+        target.addAction(() -> output.setSignal(logicalOr()) );
     }
 
-    private Signal logicalOr() {
+    protected Signal logicalOr() {
         return Signal.ifOneThenZero(() -> inputA.getSignal() == Signal.ONE || inputB.getSignal() == Signal.ONE);
     }
 }

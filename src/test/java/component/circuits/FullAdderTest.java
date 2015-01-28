@@ -1,4 +1,4 @@
-package circuits;
+package component.circuits;
 
 import component.Wire;
 import org.junit.Before;

@@ -1,7 +1,7 @@
-package component.circuits;
+package component.elements;
 
-import component.enums.Signal;
 import component.Wire;
+import component.enums.Signal;
 
 public class AndGate {
     private final Wire inputA, inputB;
@@ -16,11 +16,11 @@ public class AndGate {
         applyAndGateAction(inputB);
     }
 
-    private void applyAndGateAction(Wire target) {
+    protected void applyAndGateAction(Wire target) {
         target.addAction( () -> output.setSignal(logicalAnd()) );
     }
 
-    private Signal logicalAnd() {
+    protected Signal logicalAnd() {
         return Signal.ifOneThenZero(() -> inputA.getSignal() == Signal.ONE && inputB.getSignal() == Signal.ONE);
     }
 }
