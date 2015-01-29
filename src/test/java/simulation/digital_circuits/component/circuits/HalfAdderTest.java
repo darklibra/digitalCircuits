@@ -25,28 +25,28 @@ public class HalfAdderTest {
 
     @Test
     public void test1() {
-        a.setSignal(Signal.ONE);
-        b.setSignal(Signal.ZERO);
+        a.setSignal(Signal.HIGH);
+        b.setSignal(Signal.ROW);
 
-        assertThat(sum.getSignal()).isEqualTo(Signal.ONE);
-        assertThat(c.getSignal()).isEqualTo(Signal.ZERO);
+        assertThat(sum.getSignal()).isEqualTo(Signal.HIGH);
+        assertThat(c.getSignal()).isEqualTo(Signal.ROW);
     }
 
     @Test
     public void test2() {
-        a.setSignal(Signal.ZERO);
-        b.setSignal(Signal.ONE);
+        a.setSignal(Signal.ROW);
+        b.setSignal(Signal.HIGH);
 
-        assertThat(sum.getSignal()).isEqualTo(Signal.ONE);
-        assertThat(c.getSignal()).isEqualTo(Signal.ZERO);
+        assertThat(sum.getSignal()).isEqualTo(Signal.HIGH);
+        assertThat(c.getSignal()).isEqualTo(Signal.ROW);
     }
 
     @Test
     public void test3() {
-        a.setSignal(Signal.ONE);
-        b.setSignal(Signal.ONE);
+        a.setSignal(Signal.HIGH);
+        b.setSignal(Signal.HIGH);
 
-        assertThat(sum.getSignal()).isEqualTo(Signal.ZERO);
-        assertThat(c.getSignal()).isEqualTo(Signal.ONE);
+        assertThat(sum.getSignal()).isEqualTo(Signal.ROW);
+        assertThat(c.getSignal()).isEqualTo(Signal.HIGH);
     }
 }

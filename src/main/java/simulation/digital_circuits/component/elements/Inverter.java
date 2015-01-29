@@ -19,8 +19,8 @@ public class Inverter {
     }
 
     protected Signal logicalNot() {
-        if (input.getSignal() == Signal.ZERO) return Signal.ONE;
-        else if (input.getSignal() == Signal.ONE) return Signal.ZERO;
+        if (input.getSignal() == Signal.ROW) return Signal.HIGH;
+        else if (input.getSignal() == Signal.HIGH) return Signal.ROW;
         else throw new IllegalArgumentException("Invalid signal");
     }
 }

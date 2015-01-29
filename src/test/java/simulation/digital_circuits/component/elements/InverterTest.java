@@ -23,10 +23,10 @@ public class InverterTest {
 
     @Test
     public void invert_test() {
-        input.setSignal(Signal.ZERO);
-        assertThat(output.getSignal()).isEqualTo(Signal.ONE);
+        input.setSignal(Signal.ROW);
+        assertThat(output.getSignal()).isEqualTo(Signal.HIGH);
 
-        input.setSignal(Signal.ONE);
-        assertThat(output.getSignal()).isEqualTo(Signal.ZERO);
+        input.setSignal(Signal.HIGH);
+        assertThat(output.getSignal()).isEqualTo(Signal.ROW);
     }
 }

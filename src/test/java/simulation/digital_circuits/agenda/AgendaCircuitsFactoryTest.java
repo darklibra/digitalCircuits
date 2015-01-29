@@ -27,25 +27,25 @@ public class AgendaCircuitsFactoryTest {
         agenda.setDelayTime(AgendaCircuitsFactory.INVERTER_DELAY_NAME, 3);
         Wire input = new Wire();
         Wire output = new Wire();
-        input.setSignal(Signal.ONE);
-        output.setSignal(Signal.ONE);
+        input.setSignal(Signal.HIGH);
+        output.setSignal(Signal.HIGH);
 
         Inverter inverter = agendaCircuitsFactory.newInverter(input, output);
 
         assertThat(agenda.getCurrentTime()).isEqualTo(0);
-        assertThat(output.getSignal()).isEqualTo(Signal.ONE);
+        assertThat(output.getSignal()).isEqualTo(Signal.HIGH);
 
         agendaPropagate.propagate();
 
-        assertThat(output.getSignal()).isEqualTo(Signal.ZERO);
+        assertThat(output.getSignal()).isEqualTo(Signal.ROW);
         assertThat(agenda.getCurrentTime()).isEqualTo(3);
 
-        input.setSignal(Signal.ZERO);
-        assertThat(output.getSignal()).isEqualTo(Signal.ZERO);
+        input.setSignal(Signal.ROW);
+        assertThat(output.getSignal()).isEqualTo(Signal.ROW);
 
         agendaPropagate.propagate();
 
-        assertThat(output.getSignal()).isEqualTo(Signal.ONE);
+        assertThat(output.getSignal()).isEqualTo(Signal.HIGH);
         assertThat(agenda.getCurrentTime()).isEqualTo(6);
     }
 
@@ -59,25 +59,25 @@ public class AgendaCircuitsFactoryTest {
 
         OrGate orGate = agendaCircuitsFactory.newOrGate(inputA, inputB, output);
 
-        inputA.setSignal(Signal.ONE);
-        assertThat(output.getSignal()).isEqualTo(Signal.ZERO);
+        inputA.setSignal(Signal.HIGH);
+        assertThat(output.getSignal()).isEqualTo(Signal.ROW);
         assertThat(agenda.getCurrentTime()).isEqualTo(0);
 
         agendaPropagate.propagate();
-        assertThat(output.getSignal()).isEqualTo(Signal.ONE);
+        assertThat(output.getSignal()).isEqualTo(Signal.HIGH);
         assertThat(agenda.getCurrentTime()).isEqualTo(3);
 
-        inputB.setSignal(Signal.ONE);
+        inputB.setSignal(Signal.HIGH);
         assertThat(agenda.getCurrentTime()).isEqualTo(3);
 
         agendaPropagate.propagate();
         assertThat(agenda.getCurrentTime()).isEqualTo(6);
 
-        inputA.setSignal(Signal.ZERO);
-        inputB.setSignal(Signal.ZERO);
+        inputA.setSignal(Signal.ROW);
+        inputB.setSignal(Signal.ROW);
 
         agendaPropagate.propagate();
-        assertThat(output.getSignal()).isEqualTo(Signal.ZERO);
+        assertThat(output.getSignal()).isEqualTo(Signal.ROW);
         assertThat(agenda.getCurrentTime()).isEqualTo(9);
     }
 
@@ -91,19 +91,19 @@ public class AgendaCircuitsFactoryTest {
 
         AndGate andGate = agendaCircuitsFactory.newAndGate(inputA, inputB, output);
 
-        inputA.setSignal(Signal.ONE);
-        inputB.setSignal(Signal.ONE);
+        inputA.setSignal(Signal.HIGH);
+        inputB.setSignal(Signal.HIGH);
         assertThat(agenda.getCurrentTime()).isEqualTo(0);
 
         agendaPropagate.propagate();
-        assertThat(output.getSignal()).isEqualTo(Signal.ONE);
+        assertThat(output.getSignal()).isEqualTo(Signal.HIGH);
         assertThat(agenda.getCurrentTime()).isEqualTo(3);
 
-        inputB.setSignal(Signal.ZERO);
+        inputB.setSignal(Signal.ROW);
         assertThat(agenda.getCurrentTime()).isEqualTo(3);
 
         agendaPropagate.propagate();
-        assertThat(output.getSignal()).isEqualTo(Signal.ZERO);
+        assertThat(output.getSignal()).isEqualTo(Signal.ROW);
         assertThat(agenda.getCurrentTime()).isEqualTo(6);
     }
 

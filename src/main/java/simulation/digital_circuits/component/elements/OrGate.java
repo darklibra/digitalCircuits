@@ -21,6 +21,6 @@ public class OrGate {
     }
 
     protected Signal logicalOr() {
-        return Signal.ifOneThenZero(() -> inputA.getSignal() == Signal.ONE || inputB.getSignal() == Signal.ONE);
+        return Signal.ifOneThenZero(() -> inputA.getSignal() == Signal.HIGH || inputB.getSignal() == Signal.HIGH);
     }
 }

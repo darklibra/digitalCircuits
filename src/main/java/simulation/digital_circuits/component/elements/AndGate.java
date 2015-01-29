@@ -21,6 +21,6 @@ public class AndGate {
     }
 
     protected Signal logicalAnd() {
-        return Signal.ifOneThenZero(() -> inputA.getSignal() == Signal.ONE && inputB.getSignal() == Signal.ONE);
+        return Signal.ifOneThenZero(() -> inputA.getSignal() == Signal.HIGH && inputB.getSignal() == Signal.HIGH);
     }
 }

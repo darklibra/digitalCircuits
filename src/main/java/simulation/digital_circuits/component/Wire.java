@@ -6,7 +6,7 @@ import simulation.digital_circuits.component.enums.Signal;
 import java.util.List;
 
 public class Wire {
-    private Signal signal = Signal.ZERO;
+    private Signal signal = Signal.ROW;
     private List<CircuitsAction> actions = Lists.newArrayList();
 
     public Signal getSignal() {

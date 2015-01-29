@@ -25,31 +25,31 @@ public class AndGateTest {
 
     @Test
     public void expect_zero_output_when_passed_one_zero() {
-        output.setSignal(Signal.ONE);
+        output.setSignal(Signal.HIGH);
 
-        inputA.setSignal(Signal.ONE);
-        inputB.setSignal(Signal.ZERO);
+        inputA.setSignal(Signal.HIGH);
+        inputB.setSignal(Signal.ROW);
 
-        assertThat(output.getSignal()).isEqualTo(Signal.ZERO);
+        assertThat(output.getSignal()).isEqualTo(Signal.ROW);
     }
 
     @Test
     public void expect_zero_output_when_passed_zero_one() {
-        output.setSignal(Signal.ONE);
+        output.setSignal(Signal.HIGH);
 
-        inputA.setSignal(Signal.ZERO);
-        inputB.setSignal(Signal.ONE);
+        inputA.setSignal(Signal.ROW);
+        inputB.setSignal(Signal.HIGH);
 
-        assertThat(output.getSignal()).isEqualTo(Signal.ZERO);
+        assertThat(output.getSignal()).isEqualTo(Signal.ROW);
     }
 
     @Test
     public void expect_one_output_when_passed_one_one() {
-        output.setSignal(Signal.ZERO);
+        output.setSignal(Signal.ROW);
 
-        inputA.setSignal(Signal.ONE);
-        inputB.setSignal(Signal.ONE);
+        inputA.setSignal(Signal.HIGH);
+        inputB.setSignal(Signal.HIGH);
 
-        assertThat(output.getSignal()).isEqualTo(Signal.ONE);
+        assertThat(output.getSignal()).isEqualTo(Signal.HIGH);
     }
 }

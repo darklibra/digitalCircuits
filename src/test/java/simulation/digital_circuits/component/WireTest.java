@@ -20,16 +20,16 @@ public class WireTest {
 
     @Test
     public void default_signal_test() {
-        assertThat(wire.getSignal()).isEqualTo(Signal.ZERO);
+        assertThat(wire.getSignal()).isEqualTo(Signal.ROW);
     }
 
     @Test
     public void set_signal_test() {
-        wire.setSignal(Signal.ONE);
-        assertThat(wire.getSignal()).isEqualTo(Signal.ONE);
+        wire.setSignal(Signal.HIGH);
+        assertThat(wire.getSignal()).isEqualTo(Signal.HIGH);
 
-        wire.setSignal(Signal.ZERO);
-        assertThat(wire.getSignal()).isEqualTo(Signal.ZERO);
+        wire.setSignal(Signal.ROW);
+        assertThat(wire.getSignal()).isEqualTo(Signal.ROW);
     }
 
     @Test
@@ -39,10 +39,10 @@ public class WireTest {
         wire.addAction(() -> items.add(1));
         assertThat(items.size()).isEqualTo(1);
 
-        wire.setSignal(Signal.ONE);
+        wire.setSignal(Signal.HIGH);
         assertThat(items.size()).isEqualTo(2);
 
-        wire.setSignal(Signal.ZERO);
+        wire.setSignal(Signal.ROW);
         assertThat(items.size()).isEqualTo(3);
     }
 
@@ -52,10 +52,10 @@ public class WireTest {
 
         wire.addAction(() -> items.add(1));
 
-        wire.setSignal(Signal.ONE);
+        wire.setSignal(Signal.HIGH);
         assertThat(items.size()).isEqualTo(2);
 
-        wire.setSignal(Signal.ONE);
+        wire.setSignal(Signal.HIGH);
         assertThat(items.size()).isEqualTo(2);
     }
 }
