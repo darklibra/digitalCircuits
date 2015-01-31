@@ -23,7 +23,6 @@ public class AgendaPropagateTest {
 
     @Test
     public void propagate_test() {
-
         agenda.addAction(2, () -> { accu.add(0); });
         agendaPropagate.propagate();
 

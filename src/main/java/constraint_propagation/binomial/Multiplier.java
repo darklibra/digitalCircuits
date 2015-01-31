@@ -19,7 +19,8 @@ public class Multiplier implements Constraint {
 
     @Override
     public void newValue() {
-        if (left.hasValue() && right.hasValue()) result.setValue(left.getValue() * right.getValue(), this);
+        if ((left.hasValue() && left.getValue() == 0) || (right.hasValue() && right.getValue() == 0)) result.setValue(0, this);
+        else if (left.hasValue() && right.hasValue()) result.setValue(left.getValue() * right.getValue(), this);
         else if (left.hasValue() && result.hasValue()) right.setValue(result.getValue() / left.getValue(), this);
         else if (right.hasValue() && result.hasValue()) left.setValue(result.getValue() / right.getValue(), this);
     }
