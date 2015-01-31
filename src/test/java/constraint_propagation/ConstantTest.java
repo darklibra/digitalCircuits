@@ -14,16 +14,4 @@ public class ConstantTest {
             }
         });
     }
-
-    @Test//(expected = UnsupportedOperationException.class)
-    public void constant_test_2() {
-        Constant constant = new Constant(10, new Connector());
-        constant.newValue();
-    }
-
-    @Test//(expected = UnsupportedOperationException.class)
-    public void constant_test_3() {
-        Constant constant = new Constant(10, new Connector());
-        constant.forgetValue();
-    }
 }

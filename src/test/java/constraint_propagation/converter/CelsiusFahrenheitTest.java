@@ -27,8 +27,7 @@ public class CelsiusFahrenheitTest {
     @Test(expected = RuntimeException.class)
     public void test_1() {
         celsius.setValue(25, null);
-        fahrenheit.setValue(77, null);
-        assertThat(fahrenheit.getValue()).isEqualTo(77);
+        fahrenheit.setValue(200, null);
     }
 
     @Test

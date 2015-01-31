@@ -14,11 +14,11 @@ public class Constant implements Constraint {
 
     @Override
     public void newValue() {
-        // throw new UnsupportedOperationException("");
+        throw new UnsupportedOperationException("");
     }
 
     @Override
     public void forgetValue() {
-        // throw new UnsupportedOperationException("");
+        throw new UnsupportedOperationException("");
     }
 }

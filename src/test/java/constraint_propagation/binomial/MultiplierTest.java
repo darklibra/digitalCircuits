@@ -34,8 +34,6 @@ public class MultiplierTest {
     @Test
     public void product_test_2() {
         left.setValue(10, multiplier);
-        assertThat(result.getValue()).isEqualTo(0);
-
         result.setValue(100, multiplier);
 
         multiplier.newValue();
@@ -45,8 +43,6 @@ public class MultiplierTest {
     @Test
     public void product_test_3() {
         right.setValue(10, multiplier);
-        assertThat(result.getValue()).isEqualTo(0);
-
         result.setValue(100, multiplier);
 
         multiplier.newValue();
